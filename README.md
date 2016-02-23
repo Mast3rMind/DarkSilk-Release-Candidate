@@ -76,15 +76,15 @@ Debian/Ubuntu Linux Daemon Build Instructions
 install dependencies:
 
     $ sudo apt-get update && sudo apt-get upgrade
-    $ sudo apt-get install git build-essential libssl-dev libdb5.3++-dev libminiupnpc-dev
-    dh-autoreconf zip unzip libboost-all-dev make libgmp3-dev libsnappy-dev
+    $ sudo apt-get install git build-essential libssl-dev libdb5.3++-dev libminiupnpc-dev \
+      dh-autoreconf zip unzip libboost-all-dev make libgmp3-dev libsnappy-dev
 
 build darksilkd from git:
 
     $ git clone https://github.com/SilkNetwork/DarkSilk.git darksilk
-    $ cd darksilk/src/secp256k1 && ./autogen.sh &&
-    ./configure --disable-shared --with-pic --with-bignum=no --enable-module-recovery &&
-    make && cd .. && sudo make -f makefile.unix USE_UPNP=0
+    $ cd darksilk/src/secp256k1 && ./autogen.sh && \
+      ./configure --disable-shared --with-pic --with-bignum=no --enable-module-recovery && \
+      make && cd .. && sudo make -f makefile.unix USE_UPNP=0 \
    
 install and run darksilkd daemon:
 
@@ -106,11 +106,11 @@ Debian/Ubuntu Linux Qt5 Wallet Build Instructions
 update and install dependencies:
 
     $ sudo apt-get update && sudo apt-get upgrade
-    $ sudo apt-get install make libqt5webkit5-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev
-    qttools5-dev-tools qtcreator zip unzip dh-autoreconf libboost-thread-dev libssl-dev libdb++-dev
-    libstdc++6 libminiupnpc-dev libevent-dev libcurl4-openssl-dev git libpng-dev qrencode libqrencode-dev
-    build-essential libboost-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev
-    libboost-program-options-dev libgmp3-dev libsnappy-dev
+    $ sudo apt-get install make libqt5webkit5-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev \
+      qttools5-dev-tools qtcreator zip unzip dh-autoreconf libboost-thread-dev libssl-dev libdb++-dev \
+      libstdc++6 libminiupnpc-dev libevent-dev libcurl4-openssl-dev git libpng-dev qrencode libqrencode-dev \
+      build-essential libboost-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev \
+      libboost-program-options-dev libgmp3-dev libsnappy-dev
 
 build darksilk-qt from git:
 
